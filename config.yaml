@@ -11,7 +11,7 @@ contracts:
     events:
       - event: NewGreeting
       - event: ClearGreeting
-networks:
+chains:
   - id: 137 # Polygon
     start_block: 45336336
     contracts:
@@ -25,4 +25,3 @@ networks:
 # Unordered multichain mode allows you to index events from multiple chains
 # in realtime but doesn't guarentee ordering between chains
 # https://docs.envio.dev/docs/HyperIndex/multichain-indexing#unordered-multichain-mode
-unordered_multichain_mode: true

@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "module": "CommonJS"
   },
-  "include": [
+  "include": ["envio-env.d.ts", 
     "src",
     "test"
   ]

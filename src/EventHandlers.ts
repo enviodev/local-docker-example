@@ -1,7 +1,9 @@
-import { Greeter, User } from "generated";
+import { indexer, User } from "envio";
 
 // Handler for the NewGreeting event
-Greeter.NewGreeting.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "Greeter", event: "NewGreeting" },
+  async ({ event, context }) => {
   const userId = event.params.user;
   const latestGreeting = event.params.greeting;
   const currentUserEntity: User | undefined = await context.User.get(userId);
@@ -22,10 +24,13 @@ Greeter.NewGreeting.handler(async ({ event, context }) => {
     };
 
   context.User.set(userEntity);
-});
+}
+);
 
 // Handler for the ClearGreeting event
-Greeter.ClearGreeting.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "Greeter", event: "ClearGreeting" },
+  async ({ event, context }) => {
   const userId = event.params.user;
   const currentUserEntity: User | undefined = await context.User.get(userId);
 
@@ -36,5 +41,6 @@ Greeter.ClearGreeting.handler(async ({ event, context }) => {
       latestGreeting: "",
     });
   }
-});
+}
+);
 
