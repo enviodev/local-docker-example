@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=./node_modules/envio/evm.schema.json
 name: Greeter
+disable_default_cross_chain: true # recommended; default in HyperIndex v4
 description: Greeter indexer
 #Global contract definitions that must contain all definitions except
 #addresses. Now you can share a single handler/abi/event definitions

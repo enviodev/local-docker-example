@@ -21,7 +21,7 @@
     "mocha": "10.2.0"
   },
   "dependencies": {
-    "envio": "3.2.1"
+    "envio": "3.6.1"
   },
   "engines": {
     "node": ">=22.0.0"
